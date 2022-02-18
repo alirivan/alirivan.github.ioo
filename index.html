@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css');
+        body {
+            font-family: 'Comfortaa', cursive;
+        }
+        header {
+            background-image: url("https://images.unsplash.com/photo-1565346172893-63d436cd4406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <header x-data="{ isOpen: false }">
+            <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+                <div class="flex items-center justify-between">
+                    <a class="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+                        href="#">Эпоха и Личность</a>
+        
+                    <!-- Mobile menu button -->
+                    <div @click="isOpen = !isOpen" class="flex md:hidden">
+                        <button type="button" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                            aria-label="toggle menu">
+                            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                                <path fill-rule="evenodd"
+                                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+        
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <div :class="isOpen ? 'flex' : 'hidden'"
+                    class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+                    <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+                        href="./article_main_page.html">Статьи</a>
+                    <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition-colors duration-300 transform border rounded hover:bg-indigo-400"
+                        href="https://www.youtube.com/channel/UC5MPqpekq6RuTH6nqvb_E7Q">YouTube</a>
+                </div>
+            </nav>
+        
+            <section class="flex items-center justify-center h-screen">
+                <div class="text-center">
+                    <p class="text-xl font-medium tracking-wider text-gray-300">Эпоха и Личность</p>
+                    <h2 class="mt-6 text-3xl font-bold text-white md:text-5xl">Ознакомление с людьми, <br> которые оставили яркий след в истории</h2>
+        
+                    <div class="flex justify-center mt-8">
+                        <a class="px-8 py-2 text-lg font-medium text-white transition-colors duration-300 transform bg-indigo-600 rounded hover:bg-indigo-500"
+                            href="https://www.youtube.com/channel/UC5MPqpekq6RuTH6nqvb_E7Q">YouTube канал</a>
+                    </div>
+                </div>
+            </section>
+        </header>
+        
+        <!---------------------------------------------------->
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto max-w-7x1">
+              <div class="flex flex-wrap w-full mb-4 p-4">
+              </div>
+              <div class="flex flex-wrap -m-4">
+                <div class="xl:w-1/3 md:w-1/2 p-4">
+                  <div class="bg-white p-6 rounded-lg">
+                    <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72  rounded w-full object-cover object-center mb-6" src="https://images.unsplash.com/photo-1505968409348-bd000797c92e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80">
+                    <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Что такое Эпоха?</h2>
+                    <p class="leading-relaxed text-base">Эпо́ха (от греч. έποχή — «остановка») — длительный период, выделяемый по каким-нибудь характерным явлениям, событиям. В истории это период, «меньший, чем эра»; например, эпоха Возрождения.</p>
+                  </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4">
+                  <div class="bg-white p-6 rounded-lg">
+                    <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://images.unsplash.com/photo-1508991170629-9f4cbd6bd8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1673&q=80" alt="Image Size 720x400">
+                    <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                    <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit</h2>
+                    <p class="leading-relaxed text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate laboriosam libero ex! Tempore cupiditate molestiae autem sed quis facere deleniti, ipsum, adipisci omnis vel odit ducimus totam, error obcaecati libero?</p>
+                  </div>
+                </div>
+                <div class="xl:w-1/3 md:w-1/2 p-4">
+                  <div class="bg-white p-6 rounded-lg">
+                    <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://images.unsplash.com/photo-1518424755579-8b3d047b9159?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80" alt="Image Size 720x400">
+                    <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                    <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit</h2>
+                    <p class="leading-relaxed text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate laboriosam libero ex! Tempore cupiditate molestiae autem sed quis facere deleniti, ipsum, adipisci omnis vel odit ducimus totam, error obcaecati libero?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+        <section class="bg-white">
+            <div class="max-w-8xl px-6 py-16 mx-auto">
+                <div class="items-center md:flex md:space-x-6">
+                    <div class="md:w-1/2">
+                        <div class="flex items-center justify-center">
+                            <div class="max-w-md">
+                                <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
+                                    src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mt-8 md:mt-0 md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800">Lorem ipsum dolor sit <br> amet, consectetur</h3>
+                        <p class="max-w-md mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" class="block mt-8 text-indigo-700 underline">Experienced team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+
+        <section class="bg-white dark:bg-gray-900">
+            <div class="container px-6 py-10 mx-auto">
+                <div class="xl:flex xl:items-center xL:-mx-4">
+                    <div class="xl:w-1/2 xl:mx-4">
+                        <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">Наша Команда</h1>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-3">
+                        <div>
+                            <img class="object-cover rounded-xl h-64 w-full" src="https://images.unsplash.com/photo-1613397941781-c5799533a786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
+                            
+                            <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Бердимурат Айгерим</h1>
+                            
+                        </div>
+
+                        <div>
+                            <img class="object-cover rounded-xl h-64 w-full" src="https://images.unsplash.com/photo-1551692703-f4941f2f0f6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
+                            
+                            <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Жумабаев Алихан</h1>
+                            
+                        </div>
+        
+                        <div>
+                            <img class="object-cover rounded-xl h-64 w-full" src="https://images.unsplash.com/photo-1588343508462-ddad39b0b0b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
+                            
+                            <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Ондирис Бибисара</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+        <!-------------------------------------------->
+        <section class="bg-white">
+            <div class="max-w-5xl px-6 py-16 mx-auto space-y-8 md:flex md:items-center md:space-y-0">
+                <div class="md:w-2/3">
+                    <div class="hidden md:flex md:items-center md:space-x-10">
+                        <img class="object-cover object-center rounded-md shadow w-72 h-72"
+                            src="https://images.unsplash.com/photo-1615924631431-3a5c33d767d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80">
+                        <img class="object-cover object-center w-64 rounded-md shadow h-96"
+                            src=https://images.unsplash.com/photo-1606037459429-e8ea663efe96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80">
+                    </div>
+                    <h2 class="text-3xl font-semibold text-gray-800 md:mt-6">Lorem ipsum dolor </h2>
+                    <p class="max-w-lg mt-4 text-gray-600">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse illum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia
+                        deserunt mollit anim id est laborum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="md:w-1/3">
+                    <img class="object-cover object-center w-full rounded-md shadow" style="height: 700px;"
+                        src="https://images.unsplash.com/photo-1567165064443-ccd79f0eb3f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                </div>
+            </div>
+        </section>
+        <!-------------------------------------------->
+        <!-------------------------------------------->
+
+        <!-------------------------------------------->
+    </div>
+    <!-------------------------------------------->
+
+    <!------------->
+    <!------------->
+    <footer class="bg-gray-50 text-gray-600 px-6 lg:px-8 py-12">
+        <div class="max-w-screen-xl mx-auto mb-12 lg:mb-16  ">
+          <img class="h-8" src="/images/pathway-logo.svg" alt="UptimeMate logo">
+        </div>
+        <div class="max-w-screen-xl mx-auto ">
+          <div class="grid grid-cols-8 md:grid-cols-9  lg:grid-cols-8  divide-gray-200 divide-y-2 md:divide-x-2 md:divide-y-0 md:-mx-8">
+            <div class="col-span-8 md:col-span-3 lg:col-span-2 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Company</h5>
+              <nav class="mt-4">
+                <ul class="space-y-2">
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Landingpages</a>
+                  </li>
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Features</a>
+                  </li>
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Download brochure</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Industries</h5>
+              <nav class="mt-4">
+                <ul class="grid lg:grid-cols-2">
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Employment</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Company</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Childcare</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Download brochure</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Follow us</h5>
+              <nav class="mt-4">
+                <ul class="grid lg:grid-cols-2">
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2 font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                      </svg>
+                      <span>
+                        Twitter
+                      </span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2  font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                      </svg>
+                      <span>
+                        Instagram
+                      </span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2  font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                      </svg>
+                      <span>
+                        Facebook
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-8 lg:mt-12 border-t-2 border-gray-200 pt-8">
+          <nav class="flex flex-wrap justify-center space-x-6"> 
+            <a href="#" class="font-normal text-sm hover:text-gray-400 mb-2">Cookie settings</a>
+          </nav>
+          <p class="text-sm text-center md:text-right">&copy;2020 Company. All rights reserved. | All rights reserved</p>
+        </div>
+      </footer>
+</body>
+</html>

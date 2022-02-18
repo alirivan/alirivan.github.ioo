@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+</head>
+<body>
+    <header x-data="{ isOpen: false }">
+        <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <a class="text-xl font-bold text-black transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+                    href="#">Brand</a>
+    
+                <!-- Mobile menu button -->
+                <div @click="isOpen = !isOpen" class="flex md:hidden">
+                    <button type="button" class="text-gray-800 hover:text-gray-800 focus:outline-none focus:text-gray-800"
+                        aria-label="toggle menu">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                            <path fill-rule="evenodd"
+                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div :class="isOpen ? 'flex' : 'hidden'"
+                class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Home</a>
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Templates</a>
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Price</a>
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Help</a>
+                <a class="px-4 py-1 text-sm font-medium text-center text-gray-800 transition-colors duration-300 transform border rounded hover:bg-indigo-400"
+                    href="#">Get In Touch</a>
+            </div>
+        </nav>
+    </header>
+    <div class="max-w-screen-lg mx-auto">
+        <main class="mt-10">
+          <div class="mb-4 md:mb-0 w-full mx-auto relative">
+            <div class="px-4 lg:px-0">
+              <h2 class="text-4xl font-semibold text-gray-800 leading-tight">
+                Трубачёв Олег Николаевич
+              </h2>
+              <a href="./article_main_page.html" class="py-2 text-green-700 inline-flex items-center justify-center mb-2">
+                <button class="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-purple-600 bg-purple-50 hover:text-purple-800 hover:bg-purple-100 active:bg-purple-200 focus:ring-purple-300" type="submit">Вернуться</button>
+              </a>
+            </div>
+    
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFRYZGRgaGhwdHBwcGhwaGhwaHBwcHBwaHBkeIS4lHB4rIRkaJzgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMDw8PGA8RGDEdGB0xMTE0MTQxMTQ0Pz8/NDQxPzQxMTQxNDQ0ND80PzQxPz8/NDExMT80PzQ0NDQxNDQ/Mf/AABEIALgBEQMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAFBgMEAAIHAf/EAEkQAAIABAMEBgYGBwUIAwAAAAECAAMEEQUSIQYxQVEiYXGBkaETMkJSsdEUIyRiksEVcoKy4fDxM0Nzk6IHNERFU1RVYyWD4v/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAwDAQACEQMRAD8ApVNW4Zum+9vaMUtla5/p0sF3IJOhdreqeF4LSqIzncKCSMxAAuSdwgJgNM6V8sOjIbm4YEcDEaGdrKoGtCzJsxE9GNUJ3620ES0jyMv9tVEfdZxcwL21W9WP8NfiYNYPXTSAFKLax1HLS9rwVYlvT2/tKo9jPEVRUyF0vUXPNmH9YJMJ4uTOlC99Lb+wXgBitU72DuHsdLerutpAN+yc8tSMczaM+8knfzjXC6li88ZibMvHd0UPHdEeyA+yv+u3wEQYU15lX1Mn7g+UAdnTCWYZj6w4nisKtNOYz5V3axlvfpHeG7euGKceke1D5GFiVb08gNutNHEbnXlAENkpzejn3ZjlnneTu064MVLkM4zHe/E8hAHZNtapeUwHxX+EMVSoz9pPmsAkUM5yJRztorg9I8D2waWe1h0m8TAegXhyeaP9Rgqo0EBhmv7zeJiJ6h/fb8Rjd4rvAeNPf3m/EY0M9/fb8R+cRTJgXeYrvVclJggZtG7sSRMcZEDWDMLjNYnfygJNqnMsWmPpcXzt3cYZJtK7vnKnLkKHsN7wIfCHVSu/dbrtp8IAhs/Xv6aUxdrTJbKbsSCy9p3wx7OzHJmIXY6Ou8nibeRhPwyW6ejLLYy5v+ltD3aw4YUwSpax0bXqNx/CAN7PTW+jy7sSQtjqeBtBITCOfiYp0UsIuUcCfM3/ADi2pgNhNPWR2mPTMbr8Tx0vEWXXf/N42CdcBuzt1+Jj1JjdY15mITL6zHqi3GAQdo6xwzZWYdI7mI9rtiDYmpczp93c7t7E8esxHtC2pPMn96NdiT9dPPZAGKmqJd82IPKKsRkBTQAaWvqbxW9JrrjDgae6TYm2lhbuhlTDUY3KS8xF9VBNuZNtYmTCk6IySulqvQGvlpAKRqVXKDjMwkkXsLgAsbkm2mlo3+kpc/8Ay04AEWOcG41vuGlgAeu9ob1wdbgBJXH2Bw7oll4SuW4SVe17ZB8t8AnfpGX/AOUqPBoyHP6CP+kn4B8oyATcKxn6NNdwAbhxqbDQ3390UpG0zVVZLJT0bMwvazDQW47tIp4kB0+0wM2Z/wB9lfrflBRzbK30lSR7C/vGCNDUyAgvILanvvuG+Ku1lK7T0ZEZhkGoBIuDEqUswooEtxbX1TAX3CKS7Urqq6nUbju46RRrqyXMAVJWQgixvwjxpdS2YMJpBG4g2PIR7Jw6YP7t/wAJgGnZcWppg+837oirgbD01XpuaXcc+gYtbLyXWTNDqV6RtcW9kQO2ce9RXD/D/cYQBydbMx4WQ+ZhWcEVEr/EnLp1kGGeoPR/+tT4EfOFrFWyOjDetQ/+pCfygJdmdJ1YvWp8iIZ5/rIeYU+KwpbLvmqaq/tS0bzMNU/dLPUn5iATqD13HKZN8zeCltBAqma1TPXk7HxUGC5G6AheI5dKztZO/si1KkF2Crx8uuGWjowi2A7euABScAUC7dI+USzMNQbgB2CDrrFZxAAHpAIoVFPoco1hgqFgTUre9t8AtT7NdTowgUauZKfMrajnrug7WJqCRYjfATFFtc34QQYwTbTM+WcLXIseEPMieGAKkEHcRxjhMyHbYHHDf6O54XTu3rGVdIDR7miujxIDGkbZo8zRqTGhaA5rjc3Mp/Wcf6jE2xOjzj1iB2KTwU/bf94wS2M3zT98fCAdEqnta43WvbW3bEqVTgDUabjbURRVolDQUQSpc6XAF76C2sTiexOa+trbuEDEeJ0eAJ+nbmPCMireMgjk1XiKMXseLW84pYFVKlTLdzZA1yeQtG06kmMyy2lhB6RgHI1AdyQDbeBA+pp3TRl4wV12g2ppjoJov2GGSRi8q3r+RjgNNiLoQQFPaIYafbSdoolKe8xkdkXFJfv+RiRa5Dubyjlcraiq4Uw/F/GLCbWVn/ag/tD5xodKnTgymxvoeHVCns7h05Kmqd5bKkwS8jHiVvf4wLl7V1vCiP4x84uptXX20oGv+utuvjAMs2la4AUnoFd3WCID41grtLVkRmf0wYr1ZSpMeS9p64/8umf5ifOJhtHXH/lsz/MT5wAjZrCZ8urd3lsqNKyhjaxIa9oap40TTcB5N8oDzMfrv/HTf8xPnFZ9oK0f8vmfjT5wFCbh00Vc9whyMbq3A9ED8oIC/tAi0VZu01X/AOPmD9pfnFRtoKkkXopguQN4sLm14B1wSlATPxb4cIKejiOl0Udgi0IIrOkVJqQUaKUwXgA9TAiamvfB+eggDVtc2XnBQ6slhriFfGVstob6gZR12hNx57wQtuY3pKgo6uvrIQw7t4iJ2jQRlXbKTEpbKrBxqAfERdSpQ+1HPtn8Qf0CKtMzgC2YMBex64Myq6bcfY3/ABr840Gk1C+9EbVSe95QCfEZwGlG/wCNfnFdsVnn/hHH7awQr1OFTip+ra+dj3FriC2zshpQfOpW7gi/K0XGxaoGn0Z/xLFSfjE//tmt2iAN/S096M+np70LLYxNv/u58REb4pN/7f4QDYMRl+/5GJVxWV74hHbFZhH9h5xE+Iuf7q3fBXRv0rK98eceRz/6c/8A0/OMgieuqdVudfSg+ZgRimIhuiIqVU98xF9zH4mKTQGyISYJYfIswMUEqnX1SB3CJFxSaPaH4RGVN+HVmdiCNBBmnYE7xHO0xqeDowufuCHDAcPr5wDGYkteJaWCR1b9T1QDHJAvBimcaWMJ2PVMyjS71SM59RBJXMx579F6zCym2lbwKd0sHvgO20riCCuI4Om3dcCMzoovqTKGgvqYaKfaapf1MRoj1NLCnwYiA6e7xTnqOcJSV2JP6lTSN2Swfg0b3xY/3lIf2P4xoHalTwMD2U8+I4wOeVix/wC1P7H/AOojWViYIMxKdkv0si2YDmLmAfaciwicNCfSY3MV8jBHUb2RrsO1Dr4QxSqoMuYaiCLzGKkxoT8a2mmo5WV0iButuA3kxmH4nMmKC7or+5mQvz1UNdTrugDdc53CBmS1yYgqq9iOiQxBsbakd3OJVnC3S/iL84KGVzki+75coTNoGF9Ib8TbfCRjfrXggM0aiLNNTl7kbhx4QxSsOCIMyKM2/MMzHv4d0ZUe2EANMLkeu9vGHGUABv8A55xzvB/pkpWSmkLMQOSGa+8gG2h4QVStxMf8JL8X/KNB0MsHlrEE+SOGnZCstfiY/wCGlfif5QFqduqlXZGkSw6kgi7k3EA6TpB64GVFOeuAJ2srCL/RRbmQ4HiYifaGqKl/oyZVFy2Y2HfeCCc2S3X5RRqCy3IB8QIEPtY7f3aeLRXmY+7ewniYlBB2e1ja/HWK7qx/rFM4u3uL5xq2JsfYXuvFBbI3X4xkUv0g3ujxMZAVa+VZj+sfjFNxB6vlhjpzPxjZdlamZKEyWmZNbm4FrdUAtmPAt9BviUoc2W2t7W690dA2M2TGk6aNeA4Ds6+uMqj2O2StadPHYOXZ18zBbaLaxJFpMmxmEhQPZS5tdvlA7a/bALeRTEXGjONy9S8z1xzv0nSDE3OYEk7ybjWAeMW2XUhpzzpjuwuSbWvytwHVAfEFn0qy2SeTnGllAsLXtDxXEGnG7Ub+7dCZtOb09Mx90fC35QA9NoqkkXcHh0kQjwIjepxWYyq7yZTLqt8igMRvuBuMeYZhyPTTZxzZ5brYezYlTqOwmMRkErpjMqVHSX7pv8oCKXi8ob6WUey4PjBFNppF9aSw+5NdT5RMtXTj1KRT23MbJiTD1aaX/lmAsU219ON8qpTrScx8iY2faaTboT8QU9bI48xEH6RnHdToOyWI2SdUu6KJaLdlHqLuvqY0Gam2fkZ5U4q+cAMd4ZyRfp2434Q00+VEc2OtzY8OqI5cs2GsZiShUuTYDUwFLCKRZgdnXeSCByO6NUwOnSZ6T0ZD5coCqbcr6cTeL2ETUYBlut+B4wYyX1gFegwcKzOoKKbaN0ibHiDu6o3xWWALjhy08oMVOnV2QHrmDKQT/P5QASpYML389ISMdlkk9unZB2rqmRyp1H8+cBq18xvwgj3DJByINwLa9ZMFK9yVCsblJm/qtfW0UcHQuPWyhTyvePMTqMiEAXJN9e3jASzcW9Azq8yo1ysElOqKt1B1Y6lrWhroqWWyK5aebqDZ576XF9bWjmVfUtMYu4F2NzbsA/KCmFYdPrZhRpjZF9ZiSVUcAF3ExlXSpFHJIuFQjnmd/MsYuJSpwCDrVbHxteK2EYW0iSkpXDBBa+qi17jTnrBAS5n3PxGNIh+iryv+yT+UQz8Jlvo8sNyuCfIm0Xck3gU8WjwyZ/vSvBoBAxHZiQj5bMTvN9LX5WO6IZeASfcPiYe66ncL9bNkoraXK2N+QJO+F1GX2GzLwbdfugKcnZynO9PMwIxHAZfpyiAqoUE6w2yTAauf7Sw5oPIQFP8AREvr8YyLWvut4GMgF2pmEObb7m3beLtLtRUy5Qky3AQ5r3W56W/WB1eeme0/GKrPreAOzcNWXKkzgxzzM191r39nlFiqxKok0foVLkMwzPfVQ2pQW174ixScfQUovoPzvBnBJqzUnWU6BhrY3IU6iCq/+z2hlPMnK6KwAS2YXtffa8MGFYBTpU1En0SuFCOpYXPSvcDkNIG7AJlqJwtboSzaGaYtq+b96Qh8GIgBNbL+rtbdcecJOLIDTyCd2YKfxlYf6leg45MfjCLiq/Y1PFXYeDwBGmoESRWolrZA2hOhCt8oXFX7PUDiJktr9v8AWHOhlD7QALZ6cNvvqVPzhLphmlVP+EjeFuEZBbG5symEoMFYTJYZSp4WG/r1gfR4vMmOqIqhnNhc6Xhtr6VJzYcJq5leWy268ikfCNqHZ+QjTyqDPLmAoddAVDC3nABsUl1dPLZ2KZVYKcp1ueMDcG2gmGpl5z0c1j2H+Noc9p5WemqF45FcfsmOVSdWHWR5wHc5VYA633WP9YGbQbRyFOR2sOPEnqgds9OzyBM1Z1BQ8+ibee+CQpaaddZiqWWxOZdQD1xoAMR2lablWmVgBaxseHVD9QTnCIz6MVBZeRI1EB5dVSyhll8BrkQt5gRWqdpVBKokx2BAsEPHUXgGKsqBYwtTp2Ymxi9hkqZMUtOl+jvuXNc26wNBFISArkAboBTxxDfNwgFNeGzagBdOZvCbNOsBLQ4g6B8oBHI8+cRMzzX1PSIPZYAk+QiuG0PbFqg9Z292Wx72so+JgNaKhM1wgOWylr74L0GPzaYmXlRwFAUAZbW4kj1iYp4PLLmeVBLLKYqF3ltAP56orNb0rkagC2ut+BPiDAFp229SfVCL4mNjtRViWHLob3Fsv8YFTKRFp5Uy3Td3B10yqDbTtitUP9Ug6iYyDVHtTWTHSWJiqXYC+Xn3w1TKHEAyfaUZb9OyAFVG9hffCbgYvUUo00Pz3x1ima7NfgG+No0EraHGHkjoTVm6+q8seIhcpMUqWIVFFi1hZNASeJ4Q6YoA89FKgWcre3C2/wA4r4LIyVFSl7hWQbra35QQrzceqUdkZlzKSD0dLiK8rGXM5XcjQi9hvAIuPAWjbF5OZprj2HN/2mOsXcIkg0wOW/SY3tfjzgCP6cT/AK0zwMexX9GnIeEZAA8QPTPafjFVt4izXeue0/GK19RAMGMf2NMOodvGCuxuvpVtuD69oMDMbmXk0oygWA1G8798EtiXJeYpPstbwMFe7GVRSomE9K8uV1byRD3XhFq1PtvIaw+6rA/nHPNlXtPe2n1SeTmHzFx9spW96VNXyB/KAo1J0mDrJhGxMfY3HKa/7wMPNQt3ccxpfrEJeIj7NUDlNbzVTAMGCEsyX9umy+BH8YSsNXWanvSGH4SR+UNezM6/0XW95bj4QuUYy1LrpunJ/qaMg3OqLU2GzfdmKO4hh+UNSLapmr78pG7SpKnyIhJrH/8AiJB4y5i9ujEfnDmk282lmcHlsp7WUMP3TAR1MsMoVh68t0PcP4RxxRZrcjbwNo7bOWwB5TLddm/rHH8Vk5KmYu60xvM3/OAZ9gKzLMmSjuYhh27jD0lMuZjmKk6XHLkY5ZhpaXOmW3rlOnUY6vS2mIjruZQfERobS8PQLYTHbqvpvvbsiZE1JAAvqTxPfE8qkPGNpihQeUBo0wKD2QEearHMLWF4rbR4wsuW1j0joO2FxcYC0ygHpkHTje8BQ2irc8zqGkAnEWCCTfiY99D1QFBxpFijBEuax4lE8y3yjZ6VnYIguzGwHXBrHqH0cpFUCy2znmQthGRDswcsuomXsQvl/JgHJPrnt/nzi+J4SlCra8xmDcwq2/MwOBsjdf8AP5QBOvX7PTL/AOua56rtYQNqdEQfdEH8aQIiAA6UK342LtvPKAFVuUfdHwgDOz0n7VS6WuAe3fHTKF+m/wCqf3457gifbKUX3J+UPtB600kW6K+bGNIDzWJqZen94e+xEeYeb1VSec1bxojg1kvlnb94axmENmqKhuBnfCAUas9Gq/XH77QR2Xc+gmDW3o3Nu8a90Cql7ipNt7ju6bb4I7NEiW/XLfzgIfTDnGRRzRkBpXjpntPxisd8Wq71z2n4xVeAP4xb0NPbfYfA8IubDA/SH10KtpFLGX+pkDiAvmDF7YQ/aiPuv+UFRbMoRUv+o1u54f8AaB7TqBubuvihhDwRW+lsuikpMAJItYPxvoIeNo/Uo392eg/EpEBDU6Tbfq/CFGpH1dYl/bBtzug+UNdQt5oseXkTCzU+tWLzVD5GAzZSbZKU/wDsdT3rAqctq5gLf2swa/eAP5xLs3NtKlajo1CnuYERFjgKV7kD++U9V2QRkW1TNhE0e5NPk4hjwWfno6WZ7jpfxyHyaAlGt8Pr092Y5+B/KDX+z2TnoSHBKh2A6xv+MaB6ql+v3Ed39I5VtpJyVr/eyv4j+EdXUMzEk34buEC8W2Ll1MwTXd1YKFshUAgbt4MAhYfSPMqZqIMzFVPUO08IcMDxWXJyUruM6A7r23k5QeNhBidQS6aU6ykAJF2b2mIFgSYUMDkXrpb8bPf8MA6vjKAesD3wBxvapQhykEnQAHW8XsV2Tl1LnL9W+Um4uFY8iBp32hMxLZebTt00NvetcHsYQAmfNeY2ZyTrfqEeCXrbWCUuljKagd3yopY9Q3dp4QEEqSAImpqR5jZZaljx4BR95uENOG7HM1jNJI9xdB3tvPdDNJwcIuVVVVHBRb+sELGFYKkkZj0nI1bgOpRwEU9oSAjX1voB1w3T6Ww32A3k8I59jcwu5YXYaBRzubADrJgF6YCwCaaag/lFN16FuJ0/nxhnGBTlGUp0nN8oIO/n2R6NnJrAXRRlsRqOGo84K12pNplQPckyJY/0k/GFur4dghhxTDamc8x8mZ5hQsFAA6AA3cNwgDXSmV8rqVII0IsYyDuywzV0u3sofIQ+Ye92m/sfEwj7GAGsJ3Wlt8IdMP3zj99B4LeNIEUbXrpX6z9/SjzBD9ZOPOe3lGmGPetQgA2z6Kes8SY22cJJdjxnP5eUAolLpPOnrD947oK4FYU7m2+W/wC8LQLY/VzRb1iLGx4E3tBrBVtRu1v7twO0vAAbRkR+kjIDasHTPafjERWxiSsfpntPxMRBr7+Rgpj2iA+jUrADcLnsHGDWzGENLnS5mcEOrHKAQRmA4wKxGbkpaeyg5kINxfvHXBDZiumNOkozkoFaw0tuEALoHP00iw9Wcuu49Psh32nNqSS3uz5P74EIWGktX5AfbmqO83h92nX7A/NHQ+DCAyrJWcptbfbsvC1MQGfUjnKBHaC0M+MetKbmPlC3b7TM65TD/V/GAXsEA+js3FZyEfii3tev2lmt7UlvFSPygfhSfVzAWsA5Ntdbax0vD8CR3WpmLmJRAincCtyHPM6wEGymzpEuf6ZQUntfIfctbXthjoqVJaZEUIi6KqiwAi9Tm++KZcKXHWIIFuSHHK/86wZLgLeBWLyvVa9hviFq8uQi/wBeyAqbQTGZGtutv4f1hY2UYmqBHsqxPZu+MMW0NSVSZcAIq2XrIF2a/IaCKeyWGejkh20mTrO3Unsr1aa9pgppo5lpo69OzomIcT2kRZjU8sLMmgXdSfq0HN2sdfujXsijik9kWY0s2dFUg26vWHM6nwhKwumdKhFlFrFi83S9035nc6li27vgHjD8HktMzulmf1gpyyyeFk1y+OsNMiQiLlRFVRwAA/rHPsaxsyl6AuTuO63YOO8w1bO4o1RTo7rlfcw4XHEdUEFXeK78zpzia0BMVqS/QQ6X1I4/wgA+OV3pCUGktfWJ0zHkT8Ijw/ClTNOmXNrZAdFHN8vvH8oI0lICCWACK2nEsVN+5bxJWVA9d9BwH5mAolsl5jes24HgvzMC0qS/RX3iN3WSPjFPEcRMx9Cco167/KDGzeHFFLvvb1b8F5mAJyZYloNNQIR9p5TVD3RCSnEC5Ih5mkHSIBKsDkFjbhBSVsTTP9JcujL0OI4Ew00egmW0vPI/CkUa+hnP0lcow9Vr2t1dkR0Vb6NQk9lDl2ctfRiwtu4GCKeCECrQngH3/tRvsy2hPOY5+MZhNhV9Fs1pbG46wxjTZsHIDzaYf3oCCg2tSTTGQ0t2P1guMtumTbfrxj3BU+wNf2lt4v8AwhSnDSHfCABQJqOkp7dGYwCfljI9jICGqcZ27T8TELuI2qmGdv1j8YiMBM0x8oJLZdw10HUBwglQ1aBkJa2XUG5Fj2wFhkoKfDso9JNfNYX6JtfiIyo1ImUykOhQPqcwbpXO89sXZmJq6NKdwyNqRca98CXpcKABzuL7uiTEtNRYa5yrMuTuGU38I0CRnqzAtMJsLC7ggdgjQU0vMX9I2cixsw3H+kbjZSjfRHW436kEdvKNJWwSOQUndAnVkYnQb7dcBPg+yMh2zDPkzXPS0Y8usc46E0gFbDsEV6ehWWiogsqAKB1CLEuZbQwRWpppV8jaH4iK9enSYc1+GsWq+RnW66MNQRwIgetXnFyLPLNmX8+wiAinTA8hSdLXv2jSA2zgLzXciwTRRBCoASVMsdGe6943QL2UJSmdz62c69kBU2nczp8qmBvncFwPcXUjy84ZBYuF4Dh1cIVtl09LVzp5v9WCo5Aty7oaaYXfTx4wVrUIWLqbWKgDnqCLHv1gDhlYiSXd7+uV03kqSLDvEH831rkHcEuPvWP5DzhHr8QlyWmUxWzCY7obaHP0xr2mAo1uKtOnWdcstXC8LrmNlv4x1HDKcoyInqKlrcydb+Mc52ZwVJ3pXcFjbQXNs2tj26Q/YdV5KeWAbuy633jq8tIC5ilWfUQ6+0eQ5QMlyFfKVYhQTmyn1gPZzdse2YvlUakXudwG6564uSpYRAB6qi1uZgNahwBfQAbhCXjOJl2KKeNjrv7IsbV4xYZV9bcAN8R4Rs9oJ05CzkdFOFzxY8BxgiLZ3B3Y+lmaKT0V5gfl18YcSPAR4U0W9ju3aAd3ARs7gCwgIssRz6lUUnQDnFfEK5UW7ML8eqEmvxGbUuUkAkX1PsjrJ4QVfxnaLXLL1PPfC3Nd2JL74MStnEQXmOXY7wNB/GK9TTS1v0LG/OCKNBVGU5K3BYWBG8cLQbwSrVERGDBruTcaaq1viIW6gam3dEoxi1gykkecBWnU7WFkbwhsoKyWtIiM1nCEEWNwelC/+n9NEir+krk6WvxMBJl7Y9jPpI5ecZADZ56bfrH4xrmjyoPTb9Y/ExoIyqSxiepoiiIzEXfcoN9OZMXadpeQLcZxe/hp2wQwbDZTy85BJAJGulx1QFGuQfRkbjexingk3LUSz98Dx0ixUOTT6jc+/TjwjzZjBplTUIiaBCHd+CqDfxO4QD9hWDTJtVNcsyybLextnew06xbf2w7SZaoAoAUDQAaAR5TygihRoBEqLn6HHf3RoWEfnaK9Q1tTYRYp0BXI18y+fIjnGk2nIYMRdQb25wEUmYdx1B3Qv44DKcT04aMvvLxHXB+pHRLy+lru/I8oC1s8TEIGhHrKbXU9fzgB+NVStShkNwxLL8u6ISfRUSDcWBYjj0t0RV8u9NTy0OrPbuLa+V4s7QSjkVJa3K+rfU6WEBvsnS5KYMy5Xcljbf8Adv3WgxSpYk9RPyjWmWyC1+vj1RYQAIbQFGaFE7UWJSyngxvdhfqAG/mYRf8AaDSWmypgXRxZj95NwPcfKHjFHZCkwAMqggrexu9lBU8+HfFHF6RZqrLdbjOp10tbeTyFr6b4ChsnPRKcnizHvPyAgqSwQkAZtAB7NydAeqAxdJbgEZFHRRRfQj2VA36dLrBMHcLpgBncHMzEqGv0VvoADu5wF6npyN5zMQLtuGnADgIp47ViWhsbWG++sFncKsc62tqmd/Rq1r/zpzgJdk6Bqia9RM9RTZBzbn2CG+YpVmLNv0A4ADh2nfEGD0okypcpQLgeLEXN49ryXdEH7R7PnAW2b1QRc2174DYziiygSxAHw5x7jmMLJsCQWIsNPCBlJhrFhUVK5mJvLlncvJ3HFuQ4QFGnwt6k+kqCZcv2U3Mw5kcINS6YIoSUgVRyFvPjF1Kdm6b6X4Hf4CIq2qAGUAAbgIALXSyPWv8AKA82Xmv2b9wgvUOxOpO7lFWfKGU6/K8ELVTLNzGUNVLVXSYmbPazcUtv1jaofU68eEUhUZHDZQbcDugGGTg8gi+XhcanlCtMQXNoN7P1TFnDEklbjlbWAbtvgLWWPY8zRkQV6iQ+dui3rH2TziFpL+434TGRkQSSZL3HQb8Jhm2alv6MixF828NHsZFxVBKV2kMoUlvSAAWO8m0dg2bwRaWQiKOkQC7e81tSYyMioKvMAGsUmqrTEyC7E5bHTQ779UZGQUVdQ911BB14HmCDGqVViEcG50B4E8uo/GPYyCA+0FU0gZ5aXa1zpowG8GAOLzUmyFq5ZKORYi1780YcR1xkZAQYDM+kGQQGAlBmcEHRtQo6xrF6up5jzA67g4zHiEAJPidI8jIKKBDZRY6CLLjofyI8jIIpVtKZiBbsOkrXXeCDcbxzG6BPp3sXY5ygmsptluq9FbruBJJBPVGRkFeUFI6ZZsxEDhSQq5mszcyRwGmkHaBCRnYHXgRGRkBHic6yEkHdyvCBh1IZ9Wpa4CktaxtYbtYyMgh1lOzTSN2VTzjSkR8zuVOoOtuF7AeNzGRkAnzc0yrDMrvlYBRY8OOnKHJJBU5mUs1+vTsjIyAhnO+psfC8C3DMfVbwJjIyCt/opA9XU8bXihiMtshuht1A3jIyCFObKa+it4GKyUxJfMhNkJGh0NxrGRkBHUCYoTKHHQ4A8YhpqZixujeq3snfaMjICf0Dcm/C3yjIyMiD/9k=" class="w-full object-cover lg:rounded" style="height: 28em;"/>
+          </div>
+    
+          <div class="flex flex-col lg:flex-row lg:space-x-12">
+    
+            <div class="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
+              <p class="pb-6">
+                Оле́г Никола́евич Трубачёв (23 октября 1930, Сталинград — 9 марта 2002, Москва) — советский и российский лингвист-славист, исследователь этимологии славянских языков и славянской ономастики; специалист в области сравнительно-исторического языкознания, лексикограф. Доктор филологических наук, член-корреспондент АН СССР (1972), академик РАН (1992).
+              </p>
+    
+              <p class="pb-6">
+                В 1952 году окончил филологический факультет Днепропетровского университета. Кафедра русского языка, научный руководитель — Я. А. Спринчак, специалист по русскому историческому синтаксису. В дипломе О. Трубачёва проставлена специальность «филолог (русский язык и литература)», он оканчивал университет уже славистом, представив две дипломные работы: основную — «Общеславянская лексика в основном словарном фонде русского языка» и дополнительную — о болгарском возрождении (Христо Ботев, Иван Вазов).
+              </p>
+    
+              <p class="pb-6">
+                По окончании Днепропетровского университета был приглашён в Москву, в иностранный отдел газеты «Комсомольская правда» и в Антифашистский комитет советской молодёжи. Будучи сотрудником молодёжной газеты и Антифашистского комитета, он в качестве переводчика принял участие во Всемирном фестивале молодёжи и студентов в Австрии. В то время на Пречистенке, рядом с Антифашистским комитетом, располагался и Институт славяноведения АН СССР, и Олег Николаевич поступил туда в аспирантуру (вначале — заочную), начав заниматься научными проблемами.
+                <br>
+                <br>
+                В 1952—1953 — референт Антифашистского комитета советской молодёжи.
+              </p>
+    
+              <div class="border-l-4 border-indigo-500 bg-indigo-100 pl-4 mb-6 italic rounded">
+                Трубачёва отличали работоспособность, пунктуальность и знание языков: уже в молодости он говорил на основных европейских и славянских языках, знал на уровне текста и сравнительной грамматики практически все древние индоевропейские языки.
+                <br>
+                В 1958 году была присвоена учёная степень кандидата филологических наук, диссертация «История славянских терминов родства и некоторых древнейших терминов общественного строя». С этого времени принимал участие во всех международных съездах славистов.
+              </div>
+    
+              <p class="pb-6">
+                С 1953 года аспирант Института славяноведения, с этого времени этимология становится доминирующим направлением его научной деятельности. Будучи сотрудником московской редакции «Комсомольской правды», числился в заочной аспирантуре, затем до 1961 года работал под руководством проф. С. Б. Бернштейна. В период послевоенного подъёма сравнительно-исторического языкознания[уточнить], в том числе славянского, в советской лингвистике, Трубачёв встал в ряд таких признанных специалистов в славистике, балтистике и индоевропеистике, как В. Н. Топоров, Вяч. Вс. Иванов, Н. И. Толстой, В. М. Иллич-Свитыч, В. А. Дыбо, А. А. Зализняк.
+              </p>
+
+    
+              <h2 class="text-2xl text-gray-800 font-semibold mb-4 mt-4">Научная деятельность</h2>
+
+    
+              <p class="pb-6">
+                Был одним из ведущих специалистов в области этимологии славянских языков и славянской ономастики. Осуществил перевод, редактирование и дополнение «Этимологического словаря русского языка» М. Фасмера. Под его руководством создавался многотомный «Этимологический словарь славянских языков. Праславянский лексический фонд». При реконструкции автор свободно пользовался 15 славянскими языками в их современном и древнем виде. Публикация словаря, выходившего с 1974 года регулярно, каждый год по выпуску, стала явлением не только славянской культуры, но и мировой славистики и индоевропеистики.
+              </p>
+    
+              <p class="pb-6">
+                Трубачёв писал о принципиальной невозможности северной локализации прародины индоевропейцев, которую он относил к Среднему Подунавью. Он считал, что славяне изначально были земледельцами, скифов-земледельцев, и в целом скифов и сарматов нельзя отождествлять со славянами. Название «венеты», по его мнению, было перенесено на славян относительно поздно и лишь в южнобалтийском ареале. Трубачёв разделял концепцию Донской Руси, но писал, что термин «русь» не может происходить от названия роксоланов.
+              </p>
+    
+             <!-- <p class="pb-6">Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at
+                tastes really
+                so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited
+                elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns. By
+                in cold no less been sent hard hill.</p>
+    
+              <p class="pb-6">Detract yet delight written farther his general. If in so bred at dare rose lose good. Feel and
+                make two real
+                miss use easy. Celebrated delightful an especially increasing instrument am. Indulgence contrasted sufficient
+                to unpleasant in in insensible favourable. Latter remark hunted enough vulgar say man. Sitting hearted on it
+                without me.</p>-->
+    
+            </div>
+    
+            <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
+              <div class="p-4 border-t border-b md:border md:rounded">
+                <div class="flex py-2">
+                  <div>
+                    <p class="font-semibold text-gray-700 text-sm">Ссылка на YouTube канал</p>
+                  </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=Tjov5aGCkx4">
+                  <button class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
+                    Перейти
+                    <i class='bx bx-user-plus ml-2' ></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+    
+          </div>
+        </main>
+        <!-- main ends here -->
+      </div>
+      <footer class="bg-gray-50 text-gray-600 px-6 lg:px-8 py-12">
+        <div class="max-w-screen-xl mx-auto mb-12 lg:mb-16  ">
+          <img class="h-8" src="/images/pathway-logo.svg" alt="UptimeMate logo">
+        </div>
+        <div class="max-w-screen-xl mx-auto ">
+          <div class="grid grid-cols-8 md:grid-cols-9  lg:grid-cols-8  divide-gray-200 divide-y-2 md:divide-x-2 md:divide-y-0 md:-mx-8">
+            <div class="col-span-8 md:col-span-3 lg:col-span-2 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Company</h5>
+              <nav class="mt-4">
+                <ul class="space-y-2">
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Landingpages</a>
+                  </li>
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Features</a>
+                  </li>
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Download brochure</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Industries</h5>
+              <nav class="mt-4">
+                <ul class="grid lg:grid-cols-2">
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Employment</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Company</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Childcare</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Download brochure</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Follow us</h5>
+              <nav class="mt-4">
+                <ul class="grid lg:grid-cols-2">
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2 font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                      </svg>
+                      <span>
+                        Twitter
+                      </span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2  font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                      </svg>
+                      <span>
+                        Instagram
+                      </span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2  font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                      </svg>
+                      <span>
+                        Facebook
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-8 lg:mt-12 border-t-2 border-gray-200 pt-8">
+          <nav class="flex flex-wrap justify-center space-x-6"> 
+            <a href="#" class="font-normal text-sm hover:text-gray-400 mb-2">Cookie settings</a>
+          </nav>
+          <p class="text-sm text-center md:text-right">&copy;2020 Company. All rights reserved. | All rights reserved</p>
+        </div>
+      </footer>
+</body>
+</html>

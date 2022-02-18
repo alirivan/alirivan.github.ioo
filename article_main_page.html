@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css');
+        body {
+            font-family: 'Comfortaa', cursive;
+        }
+    </style>
+</head>
+<body>
+    <header x-data="{ isOpen: false }">
+        <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <a class="text-xl font-bold text-black transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+                    href="#">Brand</a>
+    
+                <!-- Mobile menu button -->
+                <div @click="isOpen = !isOpen" class="flex md:hidden">
+                    <button type="button" class="text-gray-800 hover:text-gray-800 focus:outline-none focus:text-gray-800"
+                        aria-label="toggle menu">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                            <path fill-rule="evenodd"
+                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div :class="isOpen ? 'flex' : 'hidden'"
+                class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Home</a>
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Templates</a>
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Price</a>
+                <a class="text-sm font-medium text-gray-800 transition-colors duration-300 transform hover:text-indigo-400"
+                    href="#">Help</a>
+                <a class="px-4 py-1 text-sm font-medium text-center text-gray-800 transition-colors duration-300 transform border rounded hover:bg-indigo-400"
+                    href="#">Get In Touch</a>
+            </div>
+        </nav>
+    </header>
+    <div id="blog" class="bg-white px-4 xl:px-4 py-14">
+        <div class="mx-auto container">
+            <span role="contentinfo">
+            <h1 tabindex="0" class="focus:outline-none text-center text-3xl lg:text-5xl tracking-wider text-gray-900">"Эпоха и Личность"
+            </h1>
+        </span>
+            <div tabindex="0"  aria-label="Group of cards" class="focus:outline-none mt-12 lg:mt-24">
+                <div  class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                    <div tabindex="0" class="focus:outline-none" aria-label="card 1">
+                        <img role="img" aria-label="code editor" tabindex="0" class="focus:outline-none w-full" src="https://upload.wikimedia.org/wikipedia/ru/thumb/f/fe/Nhebachev.jpg/250px-Nhebachev.jpg" alt="code editor" />
+                        <div class="py-4 px-8 w-full flex justify-between bg-indigo-700">
+                            
+                        </div>
+                        <div class="bg-purple-200 px-10 py-6 rounded-bl-3xl rounded-br-3xl">
+                            <h1 tabindex="0" class="focus:outline-none text-4xl text-gray-900 font-semibold tracking-wider">Трубачёв Олег Николаевич</h1>
+                            <p tabindex="0" class="focus:outline-none text-gray-700 text-base lg:text-lg lg:leading-8 tracking-wide mt-6 w-11/12">В 1952 году окончил филологический факультет Днепропетровского университета. Кафедра русского языка, научный руководитель — Я. А. Спринчак, специалист по русскому историческому синтаксису. В дипломе О. Трубачёва проставлена специальность «филолог (русский язык и литература)», он оканчивал университет уже славистом, представив две дипломные работы: основную — «Общеславянская лексика в основном словарном фонде русского языка» и дополнительную — о болгарском возрождении (Христо Ботев, Иван Вазов) <br> По окончании Днепропетровского университета был приглашён в Москву, в иностранный отдел газеты «Комсомольская правда» и в Антифашистский комитет советской молодёжи. Будучи сотрудником молодёжной газеты и Антифашистского комитета, он в качестве переводчика принял участие во Всемирном фестивале молодёжи и студентов в Австрии. В то время на Пречистенке, рядом с Антифашистским комитетом, располагался и Институт славяноведения АН СССР, и Олег Николаевич...</p>
+                            <div class="w-full flex justify-end" >
+                                <button class="focus:outline-none focus:ring-2 ring-offset-2 focus:ring-gray-600 hover:opacity-75 mt-4 justify-end flex items-center cursor-pointer">
+                                    <a href="./article_read2.html"><span class=" text-base tracking-wide text-indigo-700">Читать</span></a>
+                                    <svg class="ml-3 lg:ml-6 text-indigo-700" xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                                        <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M1 8.53662H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="h-5 w-2"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                            <div tabindex="0" class="focus:outline-none " aria-label="card 2" >
+                                <img tabindex="0" role="img" aria-label="gaming" class="focus:outline-none w-full" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Bogatova_Galina_A.jpg/274px-Bogatova_Galina_A.jpg" alt="games" />
+                                <div class="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                                    
+                                </div>
+                                <div class="bg-purple-200 px-3 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                                    <h1 tabindex="0" class="focus:outline-none text-lg text-gray-900 font-semibold tracking-wider">Богатова Галина Александровна</h1>
+                                    <p tabindex="0" class="focus:outline-none text-gray-700 text-sm lg:text-base lg:leading-8 pr-4 tracking-wide mt-2">Родилась в г. Рязани в семье учителя Жукова Александра Михайловича. Среднее образование получила в рязанской школе № 2, которую окончила в 1948 году с золотой медалью. До 1952 года обучалась в Рязанском государственном педагогическом институте на историко-филологическом...</p>
+                                    <div class="w-full flex justify-end">
+                                        <button class="focus:outline-none focus:ring-2 ring-offset-2 focus:ring-gray-600 hover:opacity-75 mt-4 justify-end flex items-center cursor-pointer">
+                                            <a href="./article_read3.html"><span class=" text-base tracking-wide text-indigo-700">Читать</span></a>
+                                            <svg class="ml-3 lg:ml-6 text-indigo-700" xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                                                <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M1 8.53662H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div  tabindex="0" class="focus:outline-none" aria-label="card 3">
+                                <img tabindex="0" role="img" aria-label="gaming" class="focus:outline-none focus:outline-none w-full" src="https://famous-scientists.ru/photo/7234_image7840.jpg" alt="notes" />
+                                <div class="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                                    
+                                </div>
+                                <div class="bg-purple-200 px-3 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                                    <h1 tabindex="0" class="focus:outline-none text-lg text-gray-900 font-semibold tracking-wider">Темиргазина Зифа Какбаевна</h1>
+                                    <p tabindex="0" class="focus:outline-none text-gray-700 text-sm lg:text-base lg:leading-8 pr-4 tracking-wide mt-2">Темиргазина Зифа Какбаевна - профессор, доктор филологических наук. Родилась 19 августа 1960 года в с. Ново-Богатск Алтайского края. Окончила филологический факультет Павлодарского педагогического института (Казахстан). В 1993 г. защитила кандидатскую диссертацию в КазГУ...</p>
+                                    <div class="w-full flex justify-end">
+                                        <a href="./article_read4.html">
+                                          <button class="focus:outline-none focus:ring-2 ring-offset-2 focus:ring-gray-600 hover:opacity-75 mt-4 justify-end flex items-center cursor-pointer">
+                                            <span class=" text-base tracking-wide text-indigo-700">Читать</span>
+                                            <svg class="ml-3 lg:ml-6 text-indigo-700" xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                                                <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M1 8.53662H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                            <div tabindex="0" class="focus:outline-none " aria-label="card 4">
+                                <img tabindex="0" role="img" aria-label="laptop" class="focus:outline-none w-full" src="data:image/jpeg;base64,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" alt="laptop" />
+                                <div class="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                                    
+                                </div>
+                                <div class="bg-purple-200 px-3 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                                    <h1 tabindex="0" class="focus:outline-none text-lg text-gray-900 font-semibold tracking-wider">Валентина Айтешевна Исенгалиева</h1>
+                                    <p tabindex="0" class="focus:outline-none text-gray-700 text-sm lg:text-base lg:leading-8 pr-4 tracking-wide mt-2">Исенгалиева Валентина Айтешевна, выдающийся...</p>
+                                    <div class="w-full flex justify-end">
+                                        <button class="focus:outline-none focus:ring-2 ring-offset-2 focus:ring-gray-600 hover:opacity-75 mt-4 justify-end flex items-center cursor-pointer">
+                                            <span class=" text-base tracking-wide text-indigo-700">Читать</span>
+                                            <svg class="ml-3 lg:ml-6 text-indigo-700" xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                                                <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M1 8.53662H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div tabindex="0" class="focus:outline-none" aria-label="card 5">
+                                <img tabindex="0" role="img" aria-label="worker" class="focus:outline-none w-full" src="https://docplayer.com/docs-images/105/168519098/images/1-0.jpg" alt="worker" />
+                                <div class="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                                    
+                                </div>
+                                <div class="bg-purple-200 px-3 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                                    <h1 tabindex="0" class="focus:outline-none  text-lg text-gray-900 font-semibold tracking-wider">Памяти профессора Надежды Ивановны Гайнуллиной и профессора Галины Васильевны Ким (Ли)</h1>
+                                    <p tabindex="0" class="focus:outline-none  text-gray-700 text-sm lg:text-base lg:leading-8 pr-4 tracking-wide mt-2">Надежда Ивановна Гайнуллина (1939 г.р.) пришла на кафедру русской филологии...</p>
+                                    <div class="w-full flex justify-end">
+                                        <a href="./article_read1.html">
+                                          <button class="focus:outline-none focus:ring-2 ring-offset-2 focus:ring-gray-600 hover:opacity-75 mt-4 justify-end flex items-center cursor-pointer">
+                                            <span class=" text-base tracking-wide text-indigo-700">Читать</span>
+                                            <svg class="ml-3 lg:ml-6 text-indigo-700" xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+                                                <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M1 8.53662H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------->
+    <footer class="bg-gray-50 text-gray-600 px-6 lg:px-8 py-12">
+        <div class="max-w-screen-xl mx-auto mb-12 lg:mb-16  ">
+          <img class="h-8" src="/images/pathway-logo.svg" alt="UptimeMate logo">
+        </div>
+        <div class="max-w-screen-xl mx-auto ">
+          <div class="grid grid-cols-8 md:grid-cols-9  lg:grid-cols-8  divide-gray-200 divide-y-2 md:divide-x-2 md:divide-y-0 md:-mx-8">
+            <div class="col-span-8 md:col-span-3 lg:col-span-2 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Company</h5>
+              <nav class="mt-4">
+                <ul class="space-y-2">
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Landingpages</a>
+                  </li>
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Features</a>
+                  </li>
+                  <li>
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Download brochure</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Industries</h5>
+              <nav class="mt-4">
+                <ul class="grid lg:grid-cols-2">
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Employment</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Company</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Childcare</a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="font-normal text-base hover:text-gray-400">Download brochure</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0">
+              <h5 class="text-xl font-semibold text-gray-700">Follow us</h5>
+              <nav class="mt-4">
+                <ul class="grid lg:grid-cols-2">
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2 font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                      </svg>
+                      <span>
+                        Twitter
+                      </span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2  font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                      </svg>
+                      <span>
+                        Instagram
+                      </span>
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a href="#" class="flex space-x-2  font-normal text-base hover:text-gray-400">
+                      <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                      </svg>
+                      <span>
+                        Facebook
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-8 lg:mt-12 border-t-2 border-gray-200 pt-8">
+          <nav class="flex flex-wrap justify-center space-x-6"> 
+            <a href="#" class="font-normal text-sm hover:text-gray-400 mb-2">Cookie settings</a>
+          </nav>
+          <p class="text-sm text-center md:text-right">&copy;2020 Company. All rights reserved. | All rights reserved</p>
+        </div>
+      </footer>
+</body>
+</html>
